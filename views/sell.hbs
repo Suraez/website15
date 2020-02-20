@@ -1,0 +1,79 @@
+<section class="my_account_area pt--80 pb--55 bg--white">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-12">
+                    <div class="my__account__wrapper">
+                        {{# if success}}
+                            <section class="alert alert-success">
+                                <h2>BooK Information Uploaded ! Wait for the confirmation.Thank you.</h2>
+                            </section>
+                        {{else}}
+                        {{# if errors}}
+                            <div class="alert alert-danger">
+                                <section class="errors">
+                                    <ul>
+                                        {{# each errors}}
+                                            <li>{{ this.msg }}</li>
+                                        {{/each}}
+                                    </ul> 
+                                </section>
+                            </div>   
+                         {{/if}}
+                        <h3 class="account__title">Fill Up the Information of Book</h3>
+                        <form action="/book_upload" method="post" enctype="multipart/form-data">
+                            <div class="account__form">
+                                <div class="input__box">
+                                    <label>Your Name <span>*</span></label>
+                                    <input type="text" id="name" name="name" required>
+                                </div>
+                                <div class="input__box">
+                                    <label>Phone No. <span>*</span></label>
+                                    <input type="text" id="phone" name="phone" required>
+                                </div>
+                                <div class="input__box">
+                                    <label>Name of book <span>*</span></label>
+                                    <input type="text" id="book_name" name="book_name" required>
+                                </div>
+                                <div class="input__box">
+                                    <label>Image<span>*</span></label>
+                                    <input type="file" id="image_path" name="image_path" required>
+                                </div>
+                                <div class="input__box">
+                                    <label>Price of Book<span>*</span></label>
+                                    <input type="number" id="price" name="price" placeholder="Please put your optimum price." required>
+                                </div>
+                                <div class="input__box">
+                                    <label>Description of Book<span>*</span></label>
+                                    <input type="text" id="description" name="description" placeholder="e.g. To study in 1st year 1st part" required>
+                                </div>
+                                <div class="input_box" style = "padding: 10px;">
+                                    <label>Check the related the faculties<span>*</span></label>
+                                    <input type="checkbox" style = "display: inline-block; margin: 10px;" id="bct" name="bct">
+                                    <div style = "display: inline-block;">BCT</div>
+                                    <input type="checkbox" style = "display: inline-block; margin: 10px;" id="bce" name="bce">
+                                    <div style = "display: inline-block;">BCE</div>
+                                    <input type="checkbox" style = "display: inline-block; margin: 10px;" id="bexbei" name="bexbei">
+                                    <div style = "display: inline-block;">BEX/BEI</div>
+                                    <input type="checkbox" style = "display: inline-block; margin: 10px;" id="bel" name="bel">
+                                    <div style = "display: inline-block;">BEL</div>
+                                    <input type="checkbox" style = "display: inline-block; margin: 10px;" id="bge" name="bge">
+                                    <div style = "display: inline-block;">BGE</div>
+                                    <input type="checkbox" style = "display: inline-block; margin: 10px;" id="bme" name="bme">
+                                    <div style = "display: inline-block;">BME</div>
+                                    <input type="checkbox" style = "display: inline-block; margin: 10px;" id="bam" name="bam">
+                                    <div style = "display: inline-block;">BAM</div>
+                                </div>
+                                <div class="form__btn">
+                                    <button type="submit">Upload</button>
+                                </div>
+                        </div>
+                            </div>
+                        </form>
+                    </div>
+                    {{/if}}
+                </div>
+        </div>
+    </div>
+</section>
+
+

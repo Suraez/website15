@@ -1,0 +1,188 @@
+<div class="slider-area brown__nav slider--15 slide__activation slide__arrow01 owl-carousel owl-theme">
+	<!-- Start Single Slide -->
+	<div class="slide animation__style10 bg-image--1 fullscreen align__center--left">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="slider__content">
+						<div class="contentbox">
+							<h2>Buy <span>your </span></h2>
+							<h2>favourite <span>Book </span></h2>
+							<h2>from <span>Here </span></h2>
+							<a class="shopbtn" href="#" data-toggle="modal" data-target="#mymodal1">shop now</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Single Slide -->
+	<!-- Start Single Slide -->
+	<div class="slide animation__style10 bg-image--7 fullscreen align__center--left">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="slider__content">
+						<div class="contentbox">
+							<h2>Book <span>That</span></h2>
+							<h2>All <span>Matters</span></h2>
+							<a class="shopbtn" href="" data-toggle="modal" data-target="#mymodal1">shop now</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="slide animation__style10 bg-image--2 fullscreen align__center--left">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="slider__content">
+						<div class="contentbox">
+							<h2>Book <span>That</span></h2>
+							<h2>All <span>Matters</span></h2>
+							<a class="shopbtn" href="#" data-toggle="modal" data-target="#mymodal1">shop now</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Single Slide -->
+</div>
+
+{{!-- carousel modal --}}
+<div class="modal" id="mymodal1">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h2 class="modal-title">Welcome to Bookbytes.com</h2>
+				<button type="button" class="close" data-dismiss="modal">X</button>
+			</div>
+			<div class="modal-body">
+				See the all products section to buy. Thank you!
+			</div>
+		</div>
+	</div>
+</div>
+
+<section class="wn__product__area brown--color pt--80  pb--30">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="section__title text-center">
+					<h2 class="title__be--2">New <span class="color--theme">Products</span></h2>
+					<p>These books have recently been uploaded for sell. So What are you waiting for? Upload your books
+						too and start earning right now.</p>
+				</div>
+			</div>
+		</div>
+		<div class="row furniture--4 arrows_style owl-carousel owl-theme row mt--0">
+			{{# each products1}}
+			<div class="col-lg-3 col-md-4 col-sm-6 col-12">
+				<div class="product-grid">
+					<div class="product-image">
+						<a href="#">
+							<img class="pic-1" src="{{update this.image_path}}" alt="image">
+						</a>
+						<span class="product-discount-label">-50%</span>
+					</div>
+					<div class="product-content">
+						<h3 class="title">
+							<a href="/single-product/{{ this._id }}">{{ this.book_name }}</a>
+						</h3>
+						<div class="price">Rs. {{ this.price }}
+							<span> Rs. {{ markedPrice this.price}}</span>
+						</div>
+					</div>
+                    <ul class="social">
+						<li><a href="/single-product/{{ this._id }}" data-tip="Quick View" data-toggle="tooltip" title="Quick View"><i
+									class="fa fa-eye"></i></a></li>
+						<li><a href="#" data-tip="Wishlist" data-toggle="modal" data-target="#mymodal" title="Wishlist"><i class="fa fa-heart"></i></a></li>
+						<li><a href="/add-to-cart/{{ this._id }}" data-tip="Add to cart" data-toggle="tooltip" title="Add to Cart"><i
+									class="fa fa-shopping-cart"></i></a></li>
+				   </ul>		
+					</div>
+			</div>
+			{{/each}}
+		</div>
+		<div class="modal" id="mymodal">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h2 class="modal-title text-xs-left">Oops!</h2>
+						<button type="button" class="close" data-dismiss="modal">X</button>
+					</div>
+					<div class="modal-body">
+						Sorry,this feature is currently not available. Will be sorted out soon.
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- Start BEst Seller Area -->
+<!-- Start NEwsletter Area -->
+
+<!-- End NEwsletter Area -->
+<!-- Start Best Seller Area -->
+<section class="wn__bestseller__area bg--white pt--80  pb--30">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="section__title text-center">
+					<h2 class="title__be--2">All <span class="color--theme">Products</span></h2>
+					<p>Books say: She did this because. Life says: She did this. Books are where things are explained to you; life is where things aren't. I'm not surprised some people prefer books.
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="row mt--50">
+			<div class="col-md-12 col-lg-12 col-sm-12">
+				<div class="product__nav nav justify-content-center" role="tablist">
+					<a class="nav-item nav-link" href="/">ALL</a>
+					<a class="nav-item nav-link" href="/bct">Computer</a>
+					<a class="nav-item nav-link" href="/bce" role="tab">Civil</a>
+					<a class="nav-item nav-link" href="/bexbei" role="tab">Electronics</a>
+					<a class="nav-item nav-link" href="/bel" role="tab">Electrical</a>
+					<a class="nav-item nav-link" href="/bge" role="tab">Geomatics</a>
+					<a class="nav-item nav-link" href="/bme" role="tab">Mechanical</a>
+					<a class="nav-item nav-link" href="/bam" role="tab">Automobiles</a>
+				</div>
+			</div>
+		</div>
+		
+		<div class="tab__container mt--0">
+			<div class="row">
+				{{# each products2}}
+				<div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">
+					<div class="product-grid">
+						<div class="product-image">
+							<a href="#">
+								<img class="pic-1" src="{{update this.image_path}}" alt="image">
+							</a>
+							<span class="product-discount-label">-50%</span>
+						</div>
+						<div class="product-content">
+							<h3 class="title">
+								<a href="/single-product/{{ this._id }}">{{ this.book_name }}</a>
+							</h3>
+							<div class="price">Rs. {{ this.price }}
+								<span> Rs. {{ markedPrice this.price}}</span>
+							</div>
+						</div>
+						<ul class="social">
+						<li><a href="/single-product/{{ this._id }}" data-tip="Quick View" data-toggle="tooltip" title="Quick View"><i
+									class="fa fa-eye"></i></a></li>
+						<li><a href="#" data-tip="Wishlist" data-toggle="modal" data-target="#mymodal" title="Wishlist"><i class="fa fa-heart"></i></a></li>
+						<li><a href="/add-to-cart/{{ this._id }}" data-tip="Add to cart" data-toggle="tooltip" title="Add to Cart"><i
+									class="fa fa-shopping-cart"></i></a></li>
+						</ul>
+					</div>
+				</div>
+				{{/each}}
+			</div>
+		</div>
+	</div>
+</section>

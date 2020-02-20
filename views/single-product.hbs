@@ -1,0 +1,52 @@
+ <!-- Start main Content -->
+      <!-- Start main Content -->
+        <div class="maincontent bg--white pt--80 pb--55">
+        	<div class="container">
+        		<div class="row">
+        			<div class="col-lg-9 col-12">
+        				<div class="wn__single__product">
+        					<div class="row">
+        						<div class="col-lg-6 col-12">
+        							<img src="{{ update product.image_path }}" alt="image">
+        						</div>
+        						<div class="col-lg-6 col-12">
+        							<div class="product__info__main">
+        								<h1>{{ product.book_name }}</h1>
+        								<div class="price-box">
+        									<span>Rs. {{ product.price }}</span>
+        								</div>
+										<div class="product__overview">
+											<span>Description:</span>
+        									<p>{{ product.description }}</p>
+											
+        								</div>
+										
+										<div class="product_meta">
+											<span class="posted_in">Faculties: 
+												<h5>{{ product.faculty }}</h5>
+											</span>
+										</div>
+
+										<div class="box-tocart d-flex" style="margin-top: 10px;">
+        									<div class="addtocart__actions">
+        										<a href="/add-to-cart/{{ product._id }}"><button class="tocart" type="submit" title="Add to Cart">Add to cart</button></a>
+        									</div>
+        								</div>
+										<div class="product-share">
+											<ul>
+												<li class="categories-title">Share :</li>
+												<li><a href="https://www.google.com/" target="blank"><i class="fa fa-google"></i></a></li>
+												<li><a href="https://twitter.com/" target="blank"><i class="fa fa-twitter"></i></a></li>
+												<li><a href="https://np.linkedin.com/" target="blank"><i class="fa fa-linkedin"></i></a></li>
+											</ul>
+										</div>
+        							</div>
+        						</div>
+        					</div>
+        				</div>
+        			</div>
+        		</div>
+        	</div>
+        </div>
+        <!-- End main Content -->
+        <!-- End main Content -->

@@ -1,0 +1,154 @@
+<header id="wn__header" class="header__area header__absolute sticky__header">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-6 col-sm-6 col-6 col-lg-2">
+						<div class="logo">
+							<a href="/">
+								<img src="/images/logo/logo3.png" alt="logo images">
+							</a>
+						</div>
+					</div>
+					<div class="col-lg-8 d-none d-lg-block">
+						<nav class="mainmenu__nav">
+							<ul class="meninmenu d-flex justify-content-start">
+								<li class="drop with--one--item"><a href="/">Home</a></li>
+								<li class="drop"><a href="#">PDFs</a>
+									<div class="megamenu mega02">
+										<ul class="item item02">
+											<li class="title">Sections</li>
+											<li><a href="/pdf/bct">Computer Engineering</a></li>
+											<li><a href="/pdf/bme">Mechanical Engineering</a></li>
+											<li><a href="/pdf/bel">Electrical Engineering</a></li>
+											<li><a href="/pdf/bexbei">Electronics Engineering</a></li>
+											<li><a href="/pdf/bce">Civil Engineering</a></li>
+											<li><a href="/pdf/bam">Automobiles Engineering</a></li>
+										</ul>
+										<ul class="item item02">
+											<li class="title">More For Novels</li>
+											<li><a href="/pdf/love">LOVE</a></li>
+											<li><a href="/pdf/biography">BIOGRAPHY</a></li>
+											<li><a href="/pdf/motivation">MOTIVATION</a></li>
+											<li><a href="/pdf/sciencefiction">SCIENCE FICTIONS</a></li>
+											<li><a href="/pdf/nonfiction">NON FICTIONS</a></li>
+										</ul>
+									</div>
+								</li>
+								<li class="drop"><a href="#">Pages</a>
+									<div class="megamenu dropdown">
+										<ul class="item item01">
+											<li><a href="/about">About Page</a></li>
+											<li><a href="/user/profile">My Account</a></li>
+											<li><a href="/shopping-cart">Cart Page</a></li>
+											<li><a href="/checkout">Checkout Page</a></li>
+											<li><a href="/wish">Wishlist Page</a></li>
+										</ul>
+									</div>
+								</li>
+								<li><a href="/sell">SELL</a></li>
+								<li><a href="/contact">Contact</a></li>
+								<li><a href="/about">About Us</a></li>
+							</ul>
+						</nav>
+					</div>
+					<div class="col-md-6 col-sm-6 col-6 col-lg-2">
+						<ul class="header__sidebar__right d-flex justify-content-end align-items-center">
+							<li class="shop_search"><a class="search__active" href="#"></a></li>
+							<li class="shopcart"><a href="/shopping-cart"><span class="product_qun">{{session.cart.totalQty}}</span></a>
+							</li>
+							<li class="setting__bar__icon"><a class="setting__active" href="#"></a>
+								<div class="searchbar__content setting__block">
+									<div class="content-inner">
+										<div class="switcher-currency">
+											<strong class="label switcher-label">
+												<span>My Account</span>
+											</strong>
+											<div class="switcher-options">
+												<div class="switcher-currency-trigger">
+													<div class="setting__menu">
+														<span><a href="/user/profile">My Account</a></span>
+														<span><a href="/wish">My Wishlist</a></span>
+														{{# if login}}
+															<span><a href="/user/logout">Log Out</a></span>
+															{{ else }}
+															<span><a href="/user/login">Sign In</a></span>
+														    <span><a href="/user/signup">Create An Account</a></span>
+														{{/if}}
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!-- Start Mobile Menu -->
+				<div class="row d-none">
+					<div class="col-lg-12 d-none">
+						<nav class="mobilemenu__nav">
+							<ul class="meninmenu">
+								<li><a href="/">Home</a></li>
+								<li><a href="#">PDFs</a>
+									<ul>
+										<li><a href="#">Engineering</a>
+											<ul>
+												<li><a href="/pdf/bct">Computer Engineering</a></li>
+												<li><a href="/pdf/bme">Mechanical Engineering</a></li>
+												<li><a href="/pdf/bel">Electrical Engineering</a></li>
+												<li><a href="/pdf/bexbei">Electronics Engineering</a></li>
+												<li><a href="/pdf/bce">Civil Engineering</a></li>
+												<li><a href="/pdf/bam">Automobiles Engineering</a></li>
+											</ul>
+										</li>
+										<li><a href="#">Novels</a>
+											<ul>
+											<li><a href="/pdf/love">LOVE</a></li>
+											<li><a href="/shop-grid">BIOGRAPHY</a></li>
+											<li><a href="/shop-grid">MOTIVATION</a></li>
+											<li><a href="/pdf/sciencefiction">SCIENCE FICTIONS</a></li>
+											<li><a href="/pdf/nonfiction">NON FICTIONS</a></li>
+											</ul>
+										</li>
+									</ul>									
+								</li>
+								<li><a href="#">Pages</a>
+									<ul>
+										<li><a href="/about">About Page</a></li>
+										<li><a href="/user/profile">My Account</a></li>
+										<li><a href="/shopping-cart">Cart Page</a></li>
+										<li><a href="/checkout">Checkout Page</a></li>
+										<li><a href="/wish">Wishlist Page</a></li>
+									</ul>
+								</li>
+								<li><a href="/sell">SELL</a></li>
+								<li><a href="/contact">Contact</a></li>
+								<li><a href="/about">About Us</a></li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+				<!-- End Mobile Menu -->
+	            <div class="mobile-menu d-block d-lg-none">
+	            </div>
+	            <!-- Mobile Menu -->	
+			</div>		
+		</header>
+		<!-- //Header -->
+		<!-- Start Search Popup -->
+		<div class="brown--color box-search-content search_active block-bg close__top">
+			<form id="search_mini_form" class="minisearch" action="#">
+				<div class="field__search">
+					<input type="text" placeholder="Search entire store here...">
+					<div class="action">
+						<a href="#"><i class="zmdi zmdi-search"></i></a>
+					</div>
+				</div>
+			</form>
+			<div class="close__wrap">
+				<span>close</span>
+			</div>
+		</div>
+		<!-- End Search Popup -->
+        <!-- Start Slider area -->
+        

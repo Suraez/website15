@@ -1,0 +1,75 @@
+<section class="my_account_area pt--80 pb--55 bg--white">
+			<div class="container">
+				{{!-- added row --}}
+				<div class="row">
+					<div class="col-lg-6 col-12">
+						<div class="my_account_wrapper d-flex justify-content-center">
+							{{# if messages}}
+            					<div class="alert alert-danger">
+                				{{# each messages}}
+                				<p>{{  this }}</p>
+               				 	{{/each}}
+           					 	</div>
+        					{{/if}}
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-6 col-12">
+						<div class="my__account__wrapper">
+							<h3 class="account__title">Login</h3>
+							<form action="/user/login" method="post">
+								<div class="account__form">
+									<div class="input__box">
+										<label>Email address <span>*</span></label>
+										<input type="text" id="email" name="email">
+									</div>
+									<div class="input__box">
+										<label>Password<span>*</span></label>
+										<input type="password" id="password" name="password">
+									</div>
+									<input type="hidden" name="_csrf" value="{{ csrfToken }}">
+									<div class="form__btn">
+										<button type="submit">Login</button>
+										<label class="label-for-checkbox">
+											<input id="rememberme" class="input-checkbox" name="rememberme" value="forever" type="checkbox">
+											<span>Remember me</span>
+										</label>
+									</div>
+									<a class="forget_pass" href="#">Lost your password?</a>
+								</div>
+							</form>
+						</div>
+					</div>
+					<div class="col-lg-6 col-12">
+						<div class="my__account__wrapper">
+							<h3 class="account__title">Register</h3>
+							<form action="/user/signup" method="post">
+								<div class="account__form">
+									<div class="input__box">
+										<label>Name <span>*</span></label>
+										<input type="text" id="name" name="name">
+									</div>
+									<div class="input__box">
+										<label>Email address <span>*</span></label>
+										<input type="email" id="email" name="email">
+									</div>
+									<div class="input__box">
+										<label>Password<span>*</span></label>
+										<input type="password" id="password" name="password">
+									</div>
+									<div class="input__box">
+										<label>Confirm Password<span>*</span></label>
+										<input type="password" id="password2" name="password2">
+									</div>
+									<input type="hidden" name="_csrf" value="{{ csrfToken }}">
+									<div class="form__btn">
+										<button type="submit">Register</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>

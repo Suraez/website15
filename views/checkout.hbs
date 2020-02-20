@@ -1,0 +1,105 @@
+<section class="wn__checkout__area section-padding--lg bg__white">
+        	<div class="container">
+        		<div class="row">
+					<div class="col-12">
+						{{# if errors}}
+							<div class="alert alert-danger">
+                                <section class="errors">
+                                    <ul>
+                                        {{# each errors}}
+                                            <li>{{ this.msg }}</li>
+                                        {{/each}}
+                                    </ul> 
+                                </section>
+                            </div> 
+						{{/if}}
+					</div>
+					<div class="col-lg-6 col-12 md-mt-40 sm-mt-40">
+        				<div class="wn__order__box">
+        					<h3 class="onder__title">Your order</h3>
+        					<ul class="order__total">
+        						<li>Product</li>
+        						<li>Total</li>
+        					</ul>
+                            {{# each products}}
+        					<ul class="order_product">
+        						<li>{{ this.item.book_name}}<span>Rs. {{this.price}}</span></li>
+        					</ul>
+                            {{/each}}
+        					<ul class="shipping__method">
+        						<li>Shipping <span>Rs. 20</span>
+        						</li>
+        					</ul>
+        					<ul class="total__amount">
+        						<li>Order Total <span>Rs. {{ increasePrice totalPrice}}</span></li>
+        					</ul>
+        				</div>
+					    <div id="accordion" class="checkout_accordion mt--30" role="tablist">
+						    <div class="payment">
+						        <div class="che__header" role="tab" id="headingThree">
+						          	<a class="collapsed checkout__title" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+							            <span>Cash on Delivery</span>
+						          	</a>
+						        </div>
+						        <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
+					          		<div class="payment-body">Pay with cash upon delivery.</div>
+						        </div>
+						    </div>
+					    </div>
+
+        			</div>
+        			<div class="col-lg-6 col-12">
+						<form action="/checkout" method="post">
+							<div class="customer_details">
+        					<h3>Billing details</h3>
+        					<div class="customar__field">
+        						<div class="margin_between">
+	        						<div class="input_box space_between">
+	        							<label>First name <span>*</span></label>
+	        							<input type="text" name="name" id="name" required>
+	        						</div>
+	        						<div class="input_box space_between">
+	        							<label>last name <span>*</span></label>
+	        							<input type="text" name="name" id="name" required>
+	        						</div>
+        						</div>
+        						<div class="input_box">
+        							<label>Address <span>*</span></label>
+        							<input type="text" name="address" id="address" placeholder="address address" required>
+        						</div>
+        						<div class="input_box">
+        							<input type="text" name="address" id="address" placeholder="Hostel(room no:201), Outside Hostel" required>
+        						</div>
+								<div class="margin_between">
+									<div class="input_box space_between">
+										<label>Phone <span>*</span></label>
+										<input type="number" name="phone" id="phone" required>
+									</div>
+								</div> 
+                                <div class="input_box">
+        							<button type="submit" class="btn btn-success">Buy Now</button>
+                                </div>
+
+								{{!-- <div class="modal fade" id="mymodal">
+									<div class="modal-dialog">
+										<div class="modal-content">
+											<div class="modal-header">
+												<h1>hey look at this.</h1>
+											</div>
+											<div class="modal-body">
+												<h2>Your order placed</h2>
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-default" data-dismiss="modal">close</button>
+											</div>
+										</div>
+									</div>
+								</div> --}}
+        					</div>
+        				</div>
+						</form>		
+        			</div>
+        		</div>
+        	</div>
+        </section>
+        

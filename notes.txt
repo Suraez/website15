@@ -1,0 +1,13 @@
+"img-responsive" bootstrap class makes product image responsive
+
+"clearfix" helps a div to fix all the float related errors
+
+
+if js,css files are having trouble to load . In other words, the browser is not 
+accessing the js, css files from where it is supposed to 
+try to modify the link by adding '/' at the beginning.
+
+
+Remember in render code never use '/' for files stored in root path of views
+
+9800803358
