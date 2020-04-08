@@ -1,6 +1,7 @@
 {
   "name": "website5",
   "version": "0.0.0",
+  "homepage": "http://ioebooks.com",
   "private": true,
   "scripts": {
     "start": "node ./bin/www"

@@ -41,4 +41,8 @@ router.get('/nonfiction', (req, res) => {
 router.get('/love', (req, res) => {
     res.render('love');
 })
+
+router.get('/motivation', (req, res) => {
+    res.render('motivation');
+})
 module.exports = router;
