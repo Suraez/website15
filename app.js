@@ -11,7 +11,13 @@ var flash = require('connect-flash');
 var validator = require('express-validator');
 var MongoStore = require('connect-mongo')(session);
 
-mongoose.connect('mongodb+srv://suraj21:suraj21@firstdatabase-ytrfr.mongodb.net/test?retryWrites=true&w=majority',{
+// dotenv config
+const dotenv = require('dotenv');
+dotenv.config({
+  path: '.env'
+})
+
+mongoose.connect(process.env.OJHA_MONGODB_URL,{
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
