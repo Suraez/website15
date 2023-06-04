@@ -87,7 +87,7 @@ app.use((req, res, next) => {
 })
 
 app.use('/', sellRouter);
-app.use('/', extraRouter); // extra router is made at the second from the bottom
+app.use('/', extraRouter);
 app.use('/', indexRouter);
 app.use('/pdf', pdfRouter);
 app.use('/user', userRouter);
