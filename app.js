@@ -3,7 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var expressHbs =  require('express-handlebars');
+var expressHbs = require('express-handlebars');
 var mongoose = require('mongoose');
 var session = require('express-session');
 var passport = require('passport');
@@ -13,23 +13,21 @@ var MongoStore = require('connect-mongo')(session);
 
 // dotenv config
 const dotenv = require('dotenv');
-dotenv.config({
-  path: '.env'
-})
+dotenv.config();
 
-mongoose.connect(process.env.OJHA_MONGODB_URL,{
+mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
-  .then(()=>console.log('Connected to the database'))
-  .catch(err=> console.log('could not connect.',err.message))
+  .then(() => console.log('Connected to the database'))
+  .catch(err => console.log('could not connect.', err.message))
 
 
- 
+
 // passport
 require('./config/passport');
 
-  // extra router is made at the top from the bottom
+// extra router is made at the top from the bottom
 var indexRouter = require('./routes/index');
 var userRouter = require('./routes/user');
 var sellRouter = require('./routes/sell');
@@ -40,27 +38,27 @@ var orderRouter = require('./routes/order');
 var app = express();
 
 
-  
+
 // view engine setup
 
-app.engine('.hbs', expressHbs({ defaultLayout: 'layout', extname: '.hbs'}))
+app.engine('.hbs', expressHbs({ defaultLayout: 'layout', extname: '.hbs' }))
 app.set('view engine', '.hbs');
 // all the updates in views
 var hbs = expressHbs.create({});
 
-hbs.handlebars.registerHelper('increasePrice', function(price){
-  price+=20;
+hbs.handlebars.registerHelper('increasePrice', function (price) {
+  price += 20;
   return price;
 })
 
-hbs.handlebars.registerHelper('update', function(strinn){
+hbs.handlebars.registerHelper('update', function (strinn) {
   var s = "/uploads/";
-  var ss = s+strinn;
+  var ss = s + strinn;
   return ss;
 })
 
-hbs.handlebars.registerHelper('markedPrice', function(price){
-  price*=2;
+hbs.handlebars.registerHelper('markedPrice', function (price) {
+  price *= 2;
   return price;
 })
 
@@ -74,8 +72,8 @@ app.use(session({
   secret: 'blahblah',
   resave: false,
   saveUninitialized: false,
-  store: new MongoStore({ mongooseConnection: mongoose.connection}),
-  cookie: {maxAge: 120 * 60 * 1000}
+  store: new MongoStore({ mongooseConnection: mongoose.connection }),
+  cookie: { maxAge: 120 * 60 * 1000 }
 }))
 app.use(flash());
 app.use(passport.initialize());
@@ -96,13 +94,13 @@ app.use('/user', userRouter);
 app.use('/ordee', orderRouter);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
@@ -113,4 +111,3 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
-  
